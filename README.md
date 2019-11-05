@@ -1,10 +1,10 @@
 # secure-query-string
 Use query string to hide real variables
 
-Usual URI/URL likes this:
-https://www.google.com/search?q=secure&aqs=chrome..69i57.16618j0j7&sourceid=chrome&ie=UTF-8
-or this:
-http://e96.ru/phones/cell_phones/smartfony/cat-s41-black
+Usual URI/URL likes this:<br>
+https://www.google.com/search?q=secure&aqs=chrome..69i57.16618j0j7&sourceid=chrome&ie=UTF-8<br>
+or this:<br>
+http://e96.ru/phones/cell_phones/smartfony/cat-s41-black<br><br>
 
 
 Script hide real data sending to server like this:

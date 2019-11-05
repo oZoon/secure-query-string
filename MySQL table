@@ -7,3 +7,18 @@ CREATE TABLE IF NOT EXISTS `aSecure` (
   KEY `encode` (`encode`),
   KEY `time` (`time`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `aCookies` (
+  `userID` tinyint(3) UNSIGNED NOT NULL,
+  `cookie` varchar(32) DEFAULT NULL,
+  `cookieTime` varchar(15) DEFAULT NULL,
+  KEY `userID` (`userID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `aUsers` (
+  `userID` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(65) DEFAULT NULL,
+  `password` varchar(256) DEFAULT NULL,
+  PRIMARY KEY (`userID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+

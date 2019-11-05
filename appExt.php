@@ -14,6 +14,16 @@ function A(&$query){
     }
 }
 
+function AMS(&$query){
+    global $a;
+    $result = array();
+    $qr = $a['mysql']->query($query);
+    while($temp = $qr->fetch_assoc()){
+        $result[] = $temp;
+    }
+    return $result;
+}
+
 function appExt_randString(&$l){
     global $a;
 		$result = '';
@@ -37,4 +47,22 @@ function e($in, $static = 'n'){
         A($query);
     }
 		return bin2hex($out);
+}
+
+function appExt_clearCookie(){
+    global $a;
+    $q = str_split(substr(hex2bin(substr($a['cookie']['cookie'], 0, ($a['CookieLength'] * 2))), 0, $a['CookieLength']));
+    $allow = str_split($a['allowSymbols']);
+    $checked = true;
+    for($i = 0; $i <= count($q) - 1; $i++){
+        if(!in_array($q[$i], $allow)){
+            $checked = false;
+        }
+    }
+    if($checked){
+        $a['cookie']['cookie'] = implode('', $q);
+        return true;
+    }else{
+        return false;
+    }
 }

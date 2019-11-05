@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS `aSecure` (
+  `userID` tinyint(3) UNSIGNED NOT NULL,
+  `encode` varchar(65) DEFAULT NULL,
+  `decode` varchar(500) DEFAULT NULL,
+  `is_static` varchar(2) NOT NULL DEFAULT 'n',
+  `time` varchar(15) DEFAULT NULL,
+  KEY `encode` (`encode`),
+  KEY `time` (`time`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;

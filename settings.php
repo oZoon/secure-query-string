@@ -47,7 +47,8 @@ function e($decode, $static = 'n'){
         $encode = $query_result['fetch_assoc']['encode'];
     }else{
         $encode = appExt_randString($registry['SecureLength']);
-        $query = 'INSERT INTO `aSecure` (`encode`, `decode`, `time`, `is_static`) VALUES (\''.$encode.'\', \''.$decode.'\', '.time().', \''.$static.'\')';
+        $query = 'INSERT INTO `aSecure` (`encode`, `decode`, `time`, `is_static`) '.
+				'VALUES (\''.$encode.'\', \''.$decode.'\', '.time().', \''.$static.'\')';
         A($query);
     }
 		return bin2hex($encode);

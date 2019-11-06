@@ -17,11 +17,5 @@ https://server.com/6b4b6e4d695a6d586e48576e59514d6c4e5132354b57514c477a305047365
 RewriteEngine on<br>
 RewriteBase /<br>
 
-RewriteCond %{ENV:HTTPS} !on<br>
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L]<br>
-
-RewriteCond %{HTTP_HOST} ^www\.server\.com$<br>
-RewriteRule ^(.*)$ https://server.com/$1 [R=301,L]<br>
-
 RewriteCond %{REQUEST_URI} ^/.{64}$<br>
 RewriteRule ^(.*)$ /?$1 [L]<br>

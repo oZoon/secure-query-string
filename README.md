@@ -12,7 +12,7 @@ https://server.com/6b4b6e4d695a6d586e48576e59514d6c4e5132354b57514c477a305047365
 
 
 
-edit .htaccess
+# .htaccess
 
 RewriteEngine on<br>
 RewriteBase /<br>
